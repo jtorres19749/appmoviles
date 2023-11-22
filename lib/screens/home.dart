@@ -1,9 +1,6 @@
 import 'package:act3_7/services/firestore.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:act3_7/widgets/app_logo.dart';
-import 'package:act3_7/widgets/app_button.dart';
-import 'package:act3_7/widgets/app_textfield.dart';
 
 
 class Home extends StatefulWidget {
