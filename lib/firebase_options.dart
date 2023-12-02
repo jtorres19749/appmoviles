@@ -23,15 +23,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -65,5 +59,23 @@ class DefaultFirebaseOptions {
     messagingSenderId: '895981865559',
     projectId: 'fluttermovies-656fe',
     storageBucket: 'fluttermovies-656fe.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCIQvNmHCGCRfpcbTG-kxepdd7mdvjsEd8',
+    appId: '1:895981865559:ios:b0c0e4737602089b47f112',
+    messagingSenderId: '895981865559',
+    projectId: 'fluttermovies-656fe',
+    storageBucket: 'fluttermovies-656fe.appspot.com',
+    iosBundleId: 'com.example.act37',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCIQvNmHCGCRfpcbTG-kxepdd7mdvjsEd8',
+    appId: '1:895981865559:ios:bb16b1e01d7bc27247f112',
+    messagingSenderId: '895981865559',
+    projectId: 'fluttermovies-656fe',
+    storageBucket: 'fluttermovies-656fe.appspot.com',
+    iosBundleId: 'com.example.act37.RunnerTests',
   );
 }

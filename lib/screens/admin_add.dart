@@ -1,38 +1,41 @@
-import 'package:act3_7/screens/movie_list.dart';
 import 'package:act3_7/services/firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:act3_7/screens/media_list.dart';
 import 'package:act3_7/widgets/app_logo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
 
-
-class Home extends StatefulWidget {
-  const Home({super.key});
-  static const String routeName = '/Home';
+class AdminAdd extends StatefulWidget {
+  const AdminAdd({super.key});
+  static const String routeName = '/AdminAdd';
   
   @override
-  State<Home> createState() => _HomeState();
+  State<AdminAdd> createState() => _AdminAddState();
 
 }
 
-class _HomeState extends State<Home> {
-final FirestoreService firestoreService = FirestoreService();
-final TextEditingController textController = TextEditingController();
-int _selectedIndex = 0;
-final auth = FirebaseAuth.instance;
+class _AdminAddState extends State<AdminAdd> {
+  final FirestoreService firestoreService = FirestoreService();
+  final TextEditingController textController = TextEditingController();
+  int _selectedIndex = 0;
+  final auth = FirebaseAuth.instance;
 
   Future _signOut()  async{
     await FirebaseAuth.instance.signOut();
   }
-
-
+    
 
 @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Catalogo de películas"),
+        title: const Text("Agregar películas"),
+        actions: <Widget> [
+          IconButton(
+              onPressed: () {}, 
+              icon: const Icon(Icons.search, color: Colors.blueAccent))
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -43,13 +46,13 @@ final auth = FirebaseAuth.instance;
             ),
             ListTile ( 
                 title: const Text("Catálogo de películas"),
-                onTap: () {Navigator.of(context).pop();},
                 // trailing: Icon(Icons.access_alarm_outlined),
+                onTap: () {Navigator.pushNamed(context, '/Home');},
             ),
             ListTile ( 
                 title: const Text("Agregar películas"),
                 // trailing: Icon(Icons.access_alarm_outlined),
-                onTap: () {Navigator.pushNamed(context, '/AdminAdd');},
+                onTap: () {Navigator.of(context).pop();},
             ),
             ListTile ( 
                 title: const Text("Administrar películas"),
@@ -65,13 +68,14 @@ final auth = FirebaseAuth.instance;
                 onTap: () => {
                   _signOut().then((value) => Navigator.pushNamed(context, '/Login'))
                 }
+                  
             ),
           ]
         )
       ),
       body: PageView(
         children: const [
-          MovieList(queryString: "")
+          MediaList(queryString: "")
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

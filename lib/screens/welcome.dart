@@ -25,8 +25,7 @@ class _WelcomeState extends State<Welcome> {
           AppLogo(),
           const SizedBox(height: 48.0,),
           AppButton(color: Colors.lightBlueAccent, nombre: "Login", onPressed: (){Navigator.pushNamed(context, '/Login');}),
-          AppButton(color: Colors.blueAccent, nombre: "Registrarse", onPressed: (){Navigator.pushNamed(context, '/Register');}),
-          AppButton(color: Colors.limeAccent, nombre: "Iniciar como invitado", onPressed: (){Navigator.pushNamed(context, '/Home');}),
+          AppButton(color: Colors.blueAccent, nombre: "Registrarse", onPressed: (){Navigator.pushNamed(context, '/Register');})
         ],
         )
       )

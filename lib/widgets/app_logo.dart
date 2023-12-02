@@ -7,7 +7,7 @@ class AppLogo extends StatelessWidget {
       Row (
         children: <Widget> [
           Image.asset('images/icons8-pelicula-64.png'),
-          const Text('    UDG Act. 3.7', 
+          const Text('    UDG App. Móviles', 
             style: TextStyle( 
               color: Colors.blueGrey,
               fontSize: 25.0, 
